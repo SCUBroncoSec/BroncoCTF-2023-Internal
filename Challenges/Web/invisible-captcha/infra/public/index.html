@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Invisible Captcha!</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<h1>Generic BroncoCTF Web Challenge</h1>
+    <p>I'm giving the flag out for free on this one. The only thing you have to do is solve a lil captcha, because spam or something.</p>
+    <h4>Click here to generate a captcha:</h4>
+    <input type="submit" value="I want a new captcha!" onclick="getCaptcha()">
+    <h4>And submit your captcha here:</h4>
+    <form id="captchaForm" action="/validateCaptcha" method="post">
+        <input type="text" name="captcha" id="captcha">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        let form = document.getElementById("captchaForm");
+        let xhr = new XMLHttpRequest();
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+
+            formData = new FormData(form);
+            
+            xhr.open("POST", "/validateCaptcha");
+            xhr.send(formData);
+
+            alert(xhr.responseText);
+        })
+    </script>
+  </body>
+</html>
