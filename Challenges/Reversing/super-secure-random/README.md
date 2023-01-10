@@ -1,6 +1,6 @@
 # Super Secure Random
 
-## Test status: Challenge not finished
+## Test status: Program finished, needs infra
 
 ## Target Difficulty: Easy (~150 Pts)
 
