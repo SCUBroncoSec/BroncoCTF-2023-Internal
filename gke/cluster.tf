@@ -1,6 +1,6 @@
 #Config vars
 variable "project_id" {
-  default = "broncosec-2023"
+  default = "broncoctf-2023"
 }
 
 variable "location" {
@@ -30,7 +30,7 @@ resource "google_service_account" "cluster-sa" {
 #Cluster
 resource "google_container_cluster" "primaryCluster" {
   name = "${var.project_id}-cluster"
-  location = var.location
+  location = "${var.location}-a"
 
   #Default node pool, is deleted immedietly and replaced with custom defined node pool
   remove_default_node_pool = true
@@ -39,8 +39,8 @@ resource "google_container_cluster" "primaryCluster" {
 
 #Node pool
 resource "google_container_node_pool" "primaryCluster-nodePool" {
-  name = "${google_container_cluster.primaryCluster.name}-nodePool"
-  location = var.location
+  name = "${google_container_cluster.primaryCluster.name}-nodepool"
+  location = "${var.location}-a"
   cluster = google_container_cluster.primaryCluster.name
 
   node_count = var.node_count
