@@ -3,6 +3,10 @@ variable "project_id" {
   default = "broncoctf-2023"
 }
 
+variable "dns-project-id" {
+  default = "broncoctf-dns"
+}
+
 variable "location" {
   default = "us-west1"
 }
@@ -15,6 +19,10 @@ variable "node_count" {
   default = 1
 }
 
+variable "dns-service-account-id" {
+  default = "external-dns-sa"
+}
+
 #Providers
 provider "google" {
   project = var.project_id
@@ -25,6 +33,23 @@ provider "google" {
 resource "google_service_account" "cluster-sa" {
   account_id = "${var.project_id}-cluster-sa"
   display_name = "SA for GKE cluster ${var.project_id}-cluster"
+}
+
+resource "google_service_account" "externaldns-sa" {
+  account_id = var.dns-service-account-id
+  display_name = var.dns-service-account-id
+}
+
+#IAM bindings
+resource "google_project_iam_binding" "external-dns-sa-binding" {
+  depends_on = [
+    google_service_account.externaldns-sa
+  ]
+  
+  project = var.dns-project-id
+  role = "roles/dns.admin"
+
+  members = [ "serviceAccount:${google_service_account.externaldns-sa.email}" ]
 }
 
 #Cluster
