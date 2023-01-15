@@ -28,6 +28,14 @@ provider "google" {
   project = var.project_id
   region = var.location
 }
+data "google_client_config" "default" {}
+
+provider "kubernetes" {
+  host = google_container_cluster.primaryCluster.endpoint
+
+  token = data.google_client_config.default.access_token
+  cluster_ca_certificate = base64decode(google_container_cluster.primaryCluster.master_auth[0].cluster_ca_certificate)
+}
 
 #Service accounts
 resource "google_service_account" "cluster-sa" {
@@ -79,4 +87,22 @@ resource "google_container_node_pool" "primaryCluster-nodePool" {
         "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
+}
+
+#external-dns secret
+resource "google_service_account_key" "externaldns-sa-key" {
+  service_account_id = google_service_account.externaldns-sa.account_id 
+}
+
+resource "kubernetes_secret" "externaldns-secret" {
+  depends_on = [
+    google_service_account_key.externaldns-sa-key
+  ]
+
+  metadata {
+    name = "external-dns"
+    namespace = "default"
+  }
+
+  data = jsondecode(base64decode(google_service_account_key.externaldns-sa-key.private_key))
 }
