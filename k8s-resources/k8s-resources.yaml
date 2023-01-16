@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: k8s-resources
+spec:
+  generators:
+    - git:
+        repoURL: git@github.com:SCUBroncoSec/BroncoCTF-2023-Internal.git
+        revision: HEAD
+        directories:
+          - path: k8s-resources/*
+  template:
+    metadata:
+      name: '{{path.basenameNormalized}}'
+    spec:
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basenameNormalized}}'
+      project: default
+      source:
+        repoURL: git@github.com:SCUBroncoSec/BroncoCTF-2023-Internal.git
+        targetRevision: HEAD
+        path: '{{path}}'
