@@ -8,6 +8,7 @@ resources:
   - "./frontendconfig-argocd-frontend-config.yaml"
   - "./ingress-argocd.yaml"
   - "./managedcertificate-argocd-tls-cert.yaml"
+
 patchesStrategicMerge:
+  - "./service-argocd-server-patch.yaml" 
   - ./configmap-patch.yaml
-  - "./service-argocd-server-patch.yaml"
