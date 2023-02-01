@@ -101,7 +101,7 @@ resource "kubernetes_secret" "externaldns-secret" {
 
   metadata {
     name = "external-dns"
-    namespace = "default"
+    namespace = "external-dns"
   }
 
   data = {
