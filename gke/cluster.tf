@@ -104,5 +104,7 @@ resource "kubernetes_secret" "externaldns-secret" {
     namespace = "default"
   }
 
-  data = jsondecode(base64decode(google_service_account_key.externaldns-sa-key.private_key))
+  data = {
+    "credentials.json" = base64decode(google_service_account_key.externaldns-sa-key.private_key)
+  }
 }
