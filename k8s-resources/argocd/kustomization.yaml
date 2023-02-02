@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: argocd
 resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml #ArgoCD install manifest
-  - "./backendconfig-argocd-backend-config.yaml"
   - "./frontendconfig-argocd-frontend-config.yaml"
   - "./ingress-argocd.yaml"
   - "./managedcertificate-argocd-tls-cert.yaml"
