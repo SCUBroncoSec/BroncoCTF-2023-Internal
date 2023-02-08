@@ -47,7 +47,7 @@ spec:
         resources:
           limits:
             cpu: 100m
-            memory: 512mi
+            memory: 512Mi
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: ctfd-mysql-db-pv
