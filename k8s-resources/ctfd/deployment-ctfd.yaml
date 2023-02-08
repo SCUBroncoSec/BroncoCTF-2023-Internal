@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctfd
+  name: ctfd
+  labels:
+    ctfd: ctfd
+    app: ctfd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ctfd
+  template:
+    metadata:
+      labels:
+        ctfd: ctfd
+        app: ctfd
+    spec:
+      containers:
+      - env:
+        - name: ACCESS_LOG
+          value: '-'
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ctfd-mysql-passwords
+              key: password
+        - name: DATABASE_URL
+          value: mysql+pymysql://ctfd:${DATABASE_PASSWORD}@ctfd-mysql-db/ctfd
+        - name: ERROR_LOG
+          value: '-'
+        - name: LOG_FOLDER
+          value: /var/log/CTFd
+        - name: REDIS_URL
+          value: redis://ctfd-redis-cache:6379
+        #- name: REVERSE_PROXY
+        #  value: "true"
+        - name: UPLOAD_FOLDER
+          value: /var/uploads
+        - name: WORKERS
+          value: "1"
+        image: rdctf/ctfd
+        imagePullPolicy: "Always"
+        name: ctfd
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/log/CTFd
+          name: ctf-pv-logs
+        - mountPath: /var/uploads
+          name: ctfd-pv-uploads
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+      volumes:
+      - name: ctf-pv-logs
+        persistentVolumeClaim:
+          claimName: ctf-pv-logs
+      - name: ctfd-pv-uploads
+        persistentVolumeClaim:
+          claimName: ctfd-pv-uploads
