@@ -7,17 +7,12 @@ metadata:
     networking.gke.io/v1beta1.FrontendConfig: argocd-frontend-config
     networking.gke.io/managed-certificates: argocd-tls-cert
     kubernetes.io/ingress.class: "gce"
+    external-dns.alpha.kubernetes.io/hostname: argocd.k8s.broncoctf.xyz
   labels:
     name: argocd
 spec:
-  rules:
-  - host: argocd.k8s.broncoctf.xyz
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: argocd-server
-            port:
-              number: 80
+  defaultBackend:
+    service:
+      name: argocd-server
+      port:
+        number: 80
