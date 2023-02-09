@@ -21,26 +21,32 @@ spec:
       - env:
         - name: ACCESS_LOG
           value: '-'
+        - name: DATABASE_PROTOCOL
+          value: mysql+pymysql
+        - name: DATABASE_HOST
+          value: ctfd-mysql-db
+        - name: DATABASE_PORT
+          value: "3306"
+        - name: DATABASE_USER
+          value: ctfd
         - name: DATABASE_PASSWORD
           valueFrom:
             secretKeyRef:
               name: ctfd-mysql-passwords
               key: password
-        - name: DATABASE_URL
-          value: mysql+pymysql://ctfd:${DATABASE_PASSWORD}@ctfd-mysql-db/ctfd
         - name: ERROR_LOG
           value: '-'
         - name: LOG_FOLDER
           value: /var/log/CTFd
         - name: REDIS_URL
           value: redis://ctfd-redis-cache:6379
-        #- name: REVERSE_PROXY
-        #  value: "true"
+        - name: REVERSE_PROXY
+          value: "false"
         - name: UPLOAD_FOLDER
           value: /var/uploads
         - name: WORKERS
           value: "1"
-        image: rdctf/ctfd
+        image: ctfd/ctfd
         imagePullPolicy: "Always"
         name: ctfd
         resources: {}
