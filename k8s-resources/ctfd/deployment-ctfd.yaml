@@ -49,6 +49,15 @@ spec:
         image: ctfd/ctfd
         imagePullPolicy: "Always"
         name: ctfd
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8000
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 60
+          successThreshold: 1
+          timeoutSeconds: 5
         resources: {}
         volumeMounts:
         - mountPath: /var/log/CTFd
