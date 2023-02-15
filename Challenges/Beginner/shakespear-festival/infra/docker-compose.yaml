@@ -1,0 +1,7 @@
+services:
+    willy:
+        container_name: willy
+        build: .
+        restart: always
+        ports:
+            - '8080:8080'
