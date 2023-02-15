@@ -12,11 +12,11 @@ variable "location" {
 }
 
 variable "node_type" {
-  default = "e2-small"
+  default = "e2-medium"
 }
 
 variable "node_count" {
-  default = 1
+  default = 2
 }
 
 variable "dns-service-account-id" {
