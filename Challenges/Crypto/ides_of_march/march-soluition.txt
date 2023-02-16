@@ -1,1 +1,0 @@
-flag: broncoctf{wh0_doesnt_l1kie_a_good_caesar_salad}
