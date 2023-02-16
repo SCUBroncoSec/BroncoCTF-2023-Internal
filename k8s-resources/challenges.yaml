@@ -1,0 +1,26 @@
+kind: ApplicationSet
+metadata:
+  name: challenges
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: git@github.com:SCUBroncoSec/BroncoCTF-2023-Internal.git
+        revision: HEAD
+        directories:
+          - path: challenges/Beginner/shakespear-festival/infra
+  template:
+    metadata:
+      name: '{{path}}'
+    spec:
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path}}'
+      project: default
+      source:
+        repoURL: git@github.com:SCUBroncoSec/BroncoCTF-2023-Internal.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
