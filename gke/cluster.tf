@@ -60,6 +60,12 @@ resource "google_project_iam_binding" "external-dns-sa-binding" {
   members = [ "serviceAccount:${google_service_account.externaldns-sa.email}" ]
 }
 
+resource "google_project_iam_member" "allow_image_pull" {
+  project = var.project_id
+  role   = "roles/artifactregistry.reader"
+  member = "serviceAccount:${google_service_account.cluster-sa.email}"
+}
+
 #Cluster
 resource "google_container_cluster" "primaryCluster" {
   name = "${var.project_id}-cluster"
