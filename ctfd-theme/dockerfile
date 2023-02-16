@@ -1,0 +1,2 @@
+FROM ctfd/ctfd
+ADD "./ctfd-neon-theme" "/opt/CTFd/CTFd/themes"
