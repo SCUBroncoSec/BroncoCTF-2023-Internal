@@ -46,7 +46,7 @@ spec:
           value: /var/uploads
         - name: WORKERS
           value: "1"
-        image: ctfd/ctfd
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/ctfd-themed:0.1
         imagePullPolicy: "Always"
         name: ctfd
         readinessProbe:
