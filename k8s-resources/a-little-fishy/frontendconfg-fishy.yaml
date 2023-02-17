@@ -2,7 +2,7 @@ apiVersion: networking.gke.io/v1beta1
 kind: FrontendConfig
 metadata:
   name: a-little-fishy-frontend-config
-  namespace: ctfd
+  namespace: a-little-fishy
 spec:
   redirectToHttps:
     enabled: true
