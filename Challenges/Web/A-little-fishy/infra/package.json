@@ -1,0 +1,14 @@
+{
+  "name": "a-little-fishy",
+  "version": "1.0.0",
+  "description": "static server for challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

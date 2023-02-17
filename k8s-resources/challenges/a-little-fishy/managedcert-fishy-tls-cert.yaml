@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: a-little-fishy-tls-cert
+  namespace: a-little-fishy
+spec:
+  domains:
+    - fishy.web.broncoctf.xyz

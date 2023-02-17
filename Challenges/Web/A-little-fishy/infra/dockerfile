@@ -1,0 +1,10 @@
+FROM node:current-alpine
+ENV NODE_ENV=production
+
+WORKDIR /ursr/app
+
+COPY index.js ./
+ADD static/ ./static/
+RUN npm install express
+EXPOSE 8000
+CMD [ "node","index.js" ]
