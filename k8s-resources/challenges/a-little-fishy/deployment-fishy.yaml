@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-little-fishy
+spec:
+  selector:
+    matchLabels:
+      app: a-little-fishy
+  template:
+    metadata:
+      labels:
+        app: a-little-fishy
+    spec:
+      containers:
+      - name: a-little-fishy
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/a-little-fishy:latest
