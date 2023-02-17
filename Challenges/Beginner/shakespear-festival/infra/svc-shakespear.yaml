@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: shakespear
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: willy.broncosec.com
+    external-dns.alpha.kubernetes.io/hostname: willy.broncoctf.xyz
 spec:
   selector:
     app: shakespear
