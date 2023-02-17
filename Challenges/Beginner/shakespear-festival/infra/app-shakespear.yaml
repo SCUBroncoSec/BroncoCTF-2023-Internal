@@ -11,3 +11,4 @@ spec:
     path: challenges/Beginner/shakespear-festival/infra
   destination:
     server: https://kubernetes.default.svc
+    namespace: argocd

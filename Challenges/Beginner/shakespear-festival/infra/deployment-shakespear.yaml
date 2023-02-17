@@ -14,7 +14,3 @@ spec:
       containers:
       - name: shakespear
         image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/shakespear:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
