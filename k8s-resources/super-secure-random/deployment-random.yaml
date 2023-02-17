@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: super-secure-random
+spec:
+  selector:
+    matchLabels:
+      app: super-secure-random
+  template:
+    metadata:
+      labels:
+        app: super-secure-random
+    spec:
+      containers:
+      - name: super-secure-random
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/super-secure-random:latest
