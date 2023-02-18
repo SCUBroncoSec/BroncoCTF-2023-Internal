@@ -1,9 +1,11 @@
-FROM pwn.red/jail
-
-COPY --from=alpine@sha256:93d5a28ff72d288d69b5997b8ba47396d2cbb62a72b5d87cd3351094b5d578a0 / /srv
+FROM alpine/socat
 
 #Copy binary to executable location
-COPY rng-x86_64-linux /srv/app/run
+COPY rng-x86_64-linux .
 
 #Copy flag to working directory
-COPY flag.txt /srv/app
+COPY flag.txt .
+
+EXPOSE 1337
+
+CMD [ "tcp-listen:1337,reuseaddr,fork", "EXEC:./rng-x86_64-linux" ]

@@ -11,5 +11,5 @@ spec:
   - name: netcat
     protocol: TCP
     port: 1337
-    targetPort: 5000
+    targetPort: 1337
   type: LoadBalancer
