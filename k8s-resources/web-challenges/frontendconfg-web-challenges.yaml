@@ -1,8 +1,8 @@
 apiVersion: networking.gke.io/v1beta1
 kind: FrontendConfig
 metadata:
-  name: a-little-fishy-frontend-config
-  namespace: a-little-fishy
+  name: web-challenges-frontend-config
+  namespace: web-challenges
 spec:
   redirectToHttps:
     enabled: true
