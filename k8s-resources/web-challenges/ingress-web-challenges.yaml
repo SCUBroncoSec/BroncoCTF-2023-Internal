@@ -27,6 +27,7 @@ spec:
           - backend:
               service:
                 name: a-little-fishy
-                number: 80000
+                port:
+                  number: 80000
             pathType: Prefix
             path: /
