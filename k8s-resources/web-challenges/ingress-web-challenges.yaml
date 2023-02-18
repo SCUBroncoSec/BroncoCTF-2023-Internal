@@ -28,6 +28,6 @@ spec:
               service:
                 name: a-little-fishy
                 port:
-                  number: 80000
+                  number: 8000
             pathType: Prefix
             path: /
