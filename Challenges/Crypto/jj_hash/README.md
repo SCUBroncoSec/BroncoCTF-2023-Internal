@@ -12,4 +12,4 @@ I took a *word* from the song Supersonic, wrapped it in flag format, and created
 
 ## Flag
 
-broncosec{devastatin'}
+broncoctf{devastatin'}
