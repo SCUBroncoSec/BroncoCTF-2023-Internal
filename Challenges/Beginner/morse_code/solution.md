@@ -1,0 +1,1 @@
+The given string is not valid morse code. A keen eye may notice that the dots and dashes are in groups of eight, hinting that the message is actually encoded with binary. Substituting the `.` for `0` and `-` for `1` will give a string of binary that decodes to the flag. 
