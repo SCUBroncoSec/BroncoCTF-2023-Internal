@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nmlkp
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: nmlkp.broncoctf.xyz
+spec:
+  selector:
+    app: nmlkp
+  ports:
+  - name: netcat
+    protocol: TCP
+    port: 1337
+    targetPort: 5000
+  type: LoadBalancer
