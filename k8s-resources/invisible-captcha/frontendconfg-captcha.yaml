@@ -1,7 +1,7 @@
 apiVersion: networking.gke.io/v1beta1
 kind: FrontendConfig
 metadata:
-  name: invisible-captcha-config
+  name: invisible-captcha-frontend-config
   namespace: invisible-captcha
 spec:
   redirectToHttps:
