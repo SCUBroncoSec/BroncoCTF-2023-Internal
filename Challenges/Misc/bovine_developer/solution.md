@@ -4,7 +4,6 @@ The next step will then be to execute the code. The COW homepage has a link to a
 
 In theory, it is also possible to use one of the other linked COW compilers/interpreters to execute to code. However, this has not been tested as it is much simpler to use the online interpreter.
 
-
  ______________________
 < broncoctf{moo0000oo} >
  ----------------------

@@ -1,0 +1,1 @@
+PDF file is corrupt because I added an extra '%EOF' to the top. For good measure, I also changed the '%PDF' designation to '%XXX'.
