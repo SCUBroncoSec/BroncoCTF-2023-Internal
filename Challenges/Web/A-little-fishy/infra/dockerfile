@@ -1,7 +1,7 @@
 FROM node:current-alpine
 ENV NODE_ENV=production
 
-WORKDIR /ursr/app
+WORKDIR /usr/app
 
 COPY index.js ./
 ADD static/ ./static/

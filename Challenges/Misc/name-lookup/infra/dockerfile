@@ -1,0 +1,9 @@
+FROM pwn.red/jail
+
+COPY --from=alpine@sha256:93d5a28ff72d288d69b5997b8ba47396d2cbb62a72b5d87cd3351094b5d578a0 / /srv
+
+#Copy binary to executable location
+COPY NMLKP-x86_64-linux /srv/app/run
+
+#Copy flag to working directory
+COPY flag.txt /srv/app

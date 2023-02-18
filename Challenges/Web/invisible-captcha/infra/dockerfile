@@ -1,0 +1,7 @@
+FROM node:current-alpine
+ENV NODE_ENV=production
+WORKDIR /usr/app
+COPY . .
+RUN npm install --production
+EXPOSE 3000
+CMD [ "npm","start" ]
