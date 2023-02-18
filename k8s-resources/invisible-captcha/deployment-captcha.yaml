@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: invisible-captcha
+spec:
+  selector:
+    matchLabels:
+      app: invisible-captcha
+  template:
+    metadata:
+      labels:
+        app: invisible-captcha
+    spec:
+      containers:
+      - name: invisible-captcha
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/invisible-captcha:latest
