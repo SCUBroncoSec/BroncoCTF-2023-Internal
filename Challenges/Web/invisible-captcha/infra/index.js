@@ -18,7 +18,7 @@ const server = express();
 const PORT = process.env.PORT || 3000;
 
 //Serve static HTML
-server.use(express.static('public'));
+server.use(express.static('static'));
 
 //Enable session middleware
 server.use(session({
