@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shakespear
+spec:
+  selector:
+    matchLabels:
+      challenge: shakespear
+  template:
+    metadata:
+      labels:
+        challenge: shakespear
+        app: nc-chals
+    spec:
+      containers:
+      - name: shakespear
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/shakespear:latest
+        ports:
+          - containerPort: 8080
+            name: shakespear-nc
