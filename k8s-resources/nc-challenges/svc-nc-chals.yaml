@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nc-chals
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: random.broncoctf.xyz, willy.broncoctf.xyz
+spec:
+  selector:
+    app: nc-chals
+  ports:
+  - name: random
+    protocol: TCP
+    port: 1337
+    targetPort: random-nc
+  - name: shakespear
+    protocol: TCP
+    port: 8080
+    targetPort: shakespear-nc
+  - name: nmlkp
+    protocol: TCP
+    port: 7331
+    targetPort: nmlkp-nc
+  - name: bes
+    protocol: TCP
+    port: 9000
+    targetPort: bes-nc
+  type: LoadBalancer

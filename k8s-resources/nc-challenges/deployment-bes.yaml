@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bes
+spec:
+  selector:
+    matchLabels:
+      challenge: bes
+  template:
+    metadata:
+      labels:
+        challenge: bes
+        app: nc-chals
+    spec:
+      containers:
+      - name: bes
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/bes:latest
+        ports:
+          - containerPort: 8080
+            name: bes-nc

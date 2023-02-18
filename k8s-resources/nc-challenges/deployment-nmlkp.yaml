@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nmlkp
+spec:
+  selector:
+    matchLabels:
+      challenge: nmlkp
+  template:
+    metadata:
+      labels:
+        challenge: nmlkp
+        app: nc-chals
+    spec:
+      containers:
+      - name: nmlkp
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/nmlkp:latest
+        ports:
+          - containerPort: 1337
+            name: nmlkp-nc
