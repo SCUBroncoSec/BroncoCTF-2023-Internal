@@ -6,7 +6,7 @@ from utils import validate_security_questions, validate_user
 app = Flask(__name__)
 app.secret_key = "your secret key"
 
-FLAG = "broncoctf{placeholder_flag}"
+FLAG = "broncoctf{D0nt_s31f_d0Xx!}"
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -33,9 +33,9 @@ def questions():
     msg = ""
     if request.method == "POST" and "username" in request.form and "q1" in request.form and "q2" in request.form and "q3" in request.form:
         username = request.form["username"]
-        q1 = request.form["q1"]
-        q2 = request.form["q2"]
-        q3 = request.form["q3"]
+        q1 = request.form["q1"].lower()
+        q2 = request.form["q2"].lower()
+        q3 = request.form["q3"].lower()
 
         if validate_security_questions(username, q1, q2, q3):
             session["loggedin"] = True

@@ -1,9 +1,9 @@
 
-USERNAME = "admin"
-PASSWORD = "admin"
-Q1 = "admin"
-Q2 = "admin"
-Q3 = "admin"
+USERNAME = "login_lover"
+PASSWORD = "thisisalongandunbreakablepassword"
+Q1 = "gizmo"
+Q2 = "fey"
+Q3 = "leavenworth"
 
 def validate_user(u, p) -> bool:
     return u == USERNAME and p == PASSWORD
