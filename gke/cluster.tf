@@ -12,11 +12,11 @@ variable "location" {
 }
 
 variable "node_type" {
-  default = "e2-small"
+  default = "e2-medium"
 }
 
 variable "node_count" {
-  default = 1
+  default = 2
 }
 
 variable "dns-service-account-id" {
@@ -60,6 +60,12 @@ resource "google_project_iam_binding" "external-dns-sa-binding" {
   members = [ "serviceAccount:${google_service_account.externaldns-sa.email}" ]
 }
 
+resource "google_project_iam_member" "allow_image_pull" {
+  project = var.project_id
+  role   = "roles/artifactregistry.reader"
+  member = "serviceAccount:${google_service_account.cluster-sa.email}"
+}
+
 #Cluster
 resource "google_container_cluster" "primaryCluster" {
   name = "${var.project_id}-cluster"
@@ -101,8 +107,10 @@ resource "kubernetes_secret" "externaldns-secret" {
 
   metadata {
     name = "external-dns"
-    namespace = "default"
+    namespace = "external-dns"
   }
 
-  data = jsondecode(base64decode(google_service_account_key.externaldns-sa-key.private_key))
+  data = {
+    "credentials.json" = base64decode(google_service_account_key.externaldns-sa-key.private_key)
+  }
 }

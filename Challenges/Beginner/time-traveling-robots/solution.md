@@ -1,0 +1,1 @@
+The title "Time Traveling Robots" should hopefuly make you think of robots.txt. In addition, you can "time travel" through the web using archive.org's wayback machine. Searching broncosec.com/robots.txt on the wayback machine will reveal the flag.

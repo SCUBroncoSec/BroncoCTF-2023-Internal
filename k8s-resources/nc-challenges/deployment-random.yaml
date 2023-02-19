@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: super-secure-random
+spec:
+  selector:
+    matchLabels:
+      challenge: super-secure-random
+  template:
+    metadata:
+      labels:
+        challenge: super-secure-random
+        app: nc-chals
+    spec:
+      containers:
+      - name: super-secure-random
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/super-secure-random:latest
+        ports:
+          - containerPort: 1337
+            name: random-nc

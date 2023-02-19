@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: k8s-resources
+  namespace: argocd
 spec:
   generators:
     - git:
@@ -15,9 +16,12 @@ spec:
     spec:
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basenameNormalized}}'
+        namespace: '{{path.basename}}'
       project: default
       source:
         repoURL: git@github.com:SCUBroncoSec/BroncoCTF-2023-Internal.git
         targetRevision: HEAD
         path: '{{path}}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true

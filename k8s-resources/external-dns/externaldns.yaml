@@ -32,7 +32,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: external-dns
-    namespace: default # change if namespace is not 'default'
+    namespace: external-dns
 ---
 apiVersion: apps/v1
 kind: Deployment
