@@ -7,3 +7,4 @@ spec:
   domains:
     - fishy.web.broncoctf.xyz
     - captcha.web.broncoctf.xyz
+    - login.web.broncoctf.xyz

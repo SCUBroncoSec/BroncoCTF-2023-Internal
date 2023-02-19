@@ -31,3 +31,13 @@ spec:
                   number: 8000
             pathType: Prefix
             path: /
+    - host: login.web.broncoctf.xyz
+      http:
+        paths:
+          - backend:
+              service:
+                name: login-trivia
+                port:
+                  number: 80
+            pathType: Prefix
+            path: /

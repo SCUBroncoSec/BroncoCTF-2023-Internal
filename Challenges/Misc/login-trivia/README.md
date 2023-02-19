@@ -10,7 +10,7 @@ I've come up with a revolutionary login page to my website. It's so good, I can 
 
 `login_lover`
 
-http://login.broncoctf.xyz
+http://login.web.broncoctf.xyz
 
 ## Flag
 
