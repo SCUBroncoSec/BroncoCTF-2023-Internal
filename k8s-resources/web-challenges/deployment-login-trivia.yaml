@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-trivia
+spec:
+  selector:
+    matchLabels:
+      app: login-trivia
+  template:
+    metadata:
+      labels:
+        app: login-trivia
+    spec:
+      containers:
+      - name: login-trivia
+        image: us-west2-docker.pkg.dev/broncoctf-2023/broncoctf-2023/login-trivia:latest

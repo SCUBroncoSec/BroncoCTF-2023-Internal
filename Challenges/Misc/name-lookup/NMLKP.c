@@ -95,8 +95,8 @@ int grepModified(char person[], char pattern[], int option){
 }
 
 int main(){
-    puts("I am NameLookup, or NMLKP for short.");
-    puts("I will find people at the party that match your search query.");
+    printf("I am NameLookup, or NMLKP for short.\n");
+    printf("I will find people at the party that match your search query.\n");
     printf("I can only handle up to %d characters and people at once.\n", 
     (INPUT_MAX-1));
     
