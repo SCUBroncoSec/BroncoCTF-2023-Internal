@@ -1,6 +1,6 @@
 # Morse Code
 
-## Test Status: Needs testing
+## Test Status: Deployed
 
 ## Target Difficulty: Beginner (75 pts)
 

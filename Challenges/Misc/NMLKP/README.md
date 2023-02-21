@@ -1,8 +1,8 @@
 # NMLKP
 
-## Test Status: Needs Testing
+## Test Status: Deployed (hosted version doesn't work)
 
-## Target Difficulty: Medium
+## Target Difficulty: Medium (200 pts)
 
 ## Description
 
@@ -11,7 +11,7 @@ I heard that a prankster wants to jumpscare five people at the party while they 
 
 **Tip:** The flag is in the form broncoctf{Name1Name2Name3...} where a "Name" is a person at the party, case sensitive, joined together with no space.
 
-`nc NMLKP.broncoctf.xyz 1337`
+**Mac and Linux users:** you will have to run `chmod +x` on the executable you downloaded in order for it to run
 
 ## Flag
 

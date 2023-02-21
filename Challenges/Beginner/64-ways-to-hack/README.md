@@ -1,8 +1,8 @@
 # 64 Ways to Hack
 
-## Test Status: Working Needs Playtesting
+## Test Status: Deployed
 
-## Target Difficulty: Easy (100 points)
+## Target Difficulty: Beginner (100 points)
 
 ## Description
 

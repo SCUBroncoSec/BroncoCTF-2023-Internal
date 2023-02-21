@@ -1,6 +1,6 @@
 # Snakes on a Plane
 
-## Test Status: Working Needs Playtesting
+## Test Status: Deployed
 
 ## Target Difficulty: Easy (100 points)
 
@@ -8,3 +8,6 @@
 
 Samuel L Jackson found some snakes on a plane and needs you to find them.
 
+## Flag
+
+broncoctf{sn4k35_0n_th1s_mf_pl4n3}

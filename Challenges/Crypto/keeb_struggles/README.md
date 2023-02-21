@@ -1,6 +1,6 @@
 # Keeb Struggles
 
-## Test Status: Needs Testing
+## Test Status: Deployed
 
 ## Target Difficulty: Easy (100 pts)
 
@@ -10,6 +10,6 @@ I was building [my new keyboard](https://images.fineartamerica.com/images-medium
 
 `xdiyviven{edxle_zc_hel_dcskuhyo}`
 
-# Flag
+## Flag
 
 broncoctf{trust_me_its_relaxing}

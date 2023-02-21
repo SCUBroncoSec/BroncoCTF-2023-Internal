@@ -1,8 +1,8 @@
 # Time Traveling Robots
 
-## Test Status: Needs Testing
+## Test Status: Deployed
 
-## Target Difficulty: Easy (50 pts)
+## Target Difficulty: Beginner (100 pts)
 
 ## Description
 

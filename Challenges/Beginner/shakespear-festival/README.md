@@ -1,8 +1,8 @@
 # Shakespear Festival
 
-## Test Status: Needs Testing
+## Test Status: Deployed
 
-## Target Difficulty: Beginner (~75 pts)
+## Target Difficulty: Beginner (75 pts)
 
 ## Description
 

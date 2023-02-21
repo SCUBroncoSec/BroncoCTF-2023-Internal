@@ -1,8 +1,8 @@
 # Login Trivia
 
-## Test status: Needs Testing
+## Test status: Deployed
 
-## Target Difficulty: Easy/Medium (~150 Pts)
+## Target Difficulty: Medium (200 Pts)
 
 ## Description
 

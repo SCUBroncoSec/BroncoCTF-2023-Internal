@@ -1,6 +1,6 @@
 # BES
 
-## Test Status: Needs testing
+## Test Status: Deployed
 
 ## Target Difficulty: Hard (250 pts)
 
@@ -10,6 +10,6 @@ I've created the Bronco Encryption Server, a place for SCU students to securely 
 
 `nc bes.broncoctf.xyz 9000`
 
-# Flag
+## Flag
 
 broncoctf{cbc!!}

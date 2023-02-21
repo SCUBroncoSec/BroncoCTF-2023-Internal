@@ -1,6 +1,6 @@
 # Whopper Analysis
 
-## Test Status: Working Needs Playtesting
+## Test Status: Deployed
 
 ## Target Difficulty: Medium (200 points)
 
@@ -14,4 +14,5 @@ Sag egph, sag'eh yhwcwut qlh ims,Mq OJ, lmxh wq sage rms.
 Oeauzazqf{ql15_y0ut_15_4_o0b}
 
 ## Flag
+
 Broncoctf{th15_s0ng_15_4_b0p}

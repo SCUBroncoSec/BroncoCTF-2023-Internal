@@ -1,7 +1,6 @@
 # Leap of Faith
 
-## Test Status: Needs Testing
-
+## Test Status: Deployed
 ## Target Difficulty: Medium (150 pts)
 
 ## Description

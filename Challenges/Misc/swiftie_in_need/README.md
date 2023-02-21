@@ -1,6 +1,6 @@
 # Swifite in Need
 
-## Test Status: Needs Testing
+## Test Status: Deployed
 
 ## Target Difficulty: Medium (200 pts)
 

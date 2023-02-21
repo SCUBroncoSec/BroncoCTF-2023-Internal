@@ -1,8 +1,10 @@
 # Super Secure Random
 
-## Test status: Needs testing
+## Test status: UNSOLVEABLE
 
-## Target Difficulty: Easy (~150 Pts)
+Participants were able to reverse the challenge and generate numbers that would solve the challenge. However, the RNG on the hosted challenge would generate a different set of random numbers, even when switching to rand_r.
+
+## Target Difficulty: Easy (150 Pts)
 
 ## Description
 

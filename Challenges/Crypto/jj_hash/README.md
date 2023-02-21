@@ -1,6 +1,6 @@
 # J.J. Hash
 
-## Test Status: Needs Testing
+## Test Status: Deployed
 
 ## Target Difficulty: Easy (100 pts)
 
